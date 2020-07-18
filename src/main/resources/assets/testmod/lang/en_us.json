@@ -2,6 +2,7 @@
 	"item.testmod.ruby": "Ruby",
 	"itemGroup.testmod": "Ruby Items",
 	"block.testmod.ruby_ore": "Ruby Ore",
+	"block.testmod.ruby_block": "Ruby Block",
 	"item.testmod.ruby_sword": "Ruby Sword",
 	"item.testmod.ruby_pickaxe": "Ruby Pickaxe",
 	"item.testmod.ruby_axe": "Ruby Axe",

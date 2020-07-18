@@ -18,7 +18,7 @@ public class RubyOreGen {
 	public static void generateOre() {
 		 for (Biome biome : ForgeRegistries.BIOMES) {
 			ConfiguredPlacement<?> customConfig = Placement.COUNT_RANGE.configure(
-			new CountRangeConfig(20, 5, 5, 70));
+			new CountRangeConfig(10, 5, 5, 70));
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(
 				new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
 				ModBlocks.RUBY_ORE.getDefaultState(),

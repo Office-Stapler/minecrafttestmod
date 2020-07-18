@@ -13,16 +13,16 @@ import net.minecraft.item.crafting.Ingredient;
 
 public class RubyTools {
 	public static final SwordItem RUBY_SWORD = 
-			new SwordItem(new Ruby_Sword(), 3, -2f, new Item.Properties()
+			new SwordItem(new Ruby_Sword(), 2, -2.5f, new Item.Properties()
 													.group(ModItemGroups.MOD_ITEM_GROUP));
 	public static final PickaxeItem RUBY_PICK = 
-			new PickaxeItem(new Ruby_Pick(), 1, -3.1f, new Item.Properties()
+			new PickaxeItem(new Ruby_Pick(), 1, -3f, new Item.Properties()
 													.group(ModItemGroups.MOD_ITEM_GROUP));
 	public static final AxeItem RUBY_AXE = 
-			new AxeItem(new Ruby_Axe(), 5, -3.1f, new Item.Properties()
+			new AxeItem(new Ruby_Axe(), 3, -3f, new Item.Properties()
 												.group(ModItemGroups.MOD_ITEM_GROUP));
 	public static final ShovelItem RUBY_SHOVEL =
-			new ShovelItem(new Ruby_Shovel(), 1, -3.1f, new Item.Properties()
+			new ShovelItem(new Ruby_Shovel(), 1, -3f, new Item.Properties()
 												.group(ModItemGroups.MOD_ITEM_GROUP));
 	public static final HoeItem RUBY_HOE = new HoeItem(new Ruby_Hoe(), 1, -3.1f,
 												new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP));
@@ -57,7 +57,7 @@ class Ruby_Tools implements IItemTier {
 class Ruby_Sword extends Ruby_Tools {
 	@Override
    public float getAttackDamage() {
-	   return 3.0F;
+	   return 4.0F;
    }
 }
 
@@ -71,7 +71,7 @@ class Ruby_Pick extends Ruby_Tools {
 class Ruby_Axe extends Ruby_Tools {
 	@Override
 	public float getAttackDamage() {
-		return 4.0f;
+		return 6.0f;
 	}
 }
 

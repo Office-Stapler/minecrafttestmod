@@ -2,7 +2,9 @@ package com.pandafear.testmod;
 
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,8 +18,5 @@ public class testmod {
 	public testmod() {
 		LOGGER.debug("Hello");
 	}
-	@SubscribeEvent
-	public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
-		RubyOreGen.generateOre();
-	}
+
 }

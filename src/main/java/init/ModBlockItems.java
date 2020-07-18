@@ -7,5 +7,6 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder(testmod.MODID)
 public class ModBlockItems {
-	public static final BlockItem ruby_ore = null;
+	public static final BlockItem RUBY_ORE = null;
+	public static final BlockItem RUBY_BLOCK = null;
 }

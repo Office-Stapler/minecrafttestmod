@@ -1,8 +1,10 @@
 package com.pandafear.testmod;
 
 import com.pandafear.testmod.armour.Ruby_Armour;
+import com.pandafear.testmod.blocks.Ruby_Block;
 import com.pandafear.testmod.blocks.Ruby_Ore;
 import com.pandafear.testmod.tools.RubyTools;
+import com.pandafear.testmod.world.gen.RubyOreGen;
 
 import init.ModBlocks;
 import init.ModItemGroups;
@@ -13,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @EventBusSubscriber(modid = testmod.MODID, bus = EventBusSubscriber.Bus.MOD)
@@ -29,14 +32,20 @@ public final class ModEventSubscriber {
 		event.getRegistry().registerAll(
 				setup(new Ruby_Ore(), "ruby_ore")
 		);
+		event.getRegistry().registerAll(
+				setup(new Ruby_Block(), "ruby_block"));
 	}
 
 	@SubscribeEvent
 	public static void onRegisterBlockItem(RegistryEvent.Register<Item> event) {
 		BlockItem ruby_ore = new BlockItem(
 				ModBlocks.RUBY_ORE, new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP));
+		BlockItem ruby_block = new BlockItem(
+				ModBlocks.RUBY_BLOCK, new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP));
 		event.getRegistry().registerAll(
 				setup(ruby_ore, "ruby_ore"));
+		event.getRegistry().registerAll(
+				setup(ruby_block, "ruby_block"));
 	}
 	
 	@SubscribeEvent
@@ -65,6 +74,10 @@ public final class ModEventSubscriber {
 				setup(Ruby_Armour.RUBY_BOOTS, "ruby_boots"));
 	}
 	
+	@SubscribeEvent
+	public static void onLoadComplete(FMLLoadCompleteEvent event) {
+		RubyOreGen.generateOre();
+	}
 	public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
 		return setup(entry, new ResourceLocation(testmod.MODID, name));
 	}

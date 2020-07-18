@@ -8,4 +8,5 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(testmod.MODID)
 public class ModBlocks {
 	public static final Block RUBY_ORE = null;
+	public static final Block RUBY_BLOCK = null;
 }
